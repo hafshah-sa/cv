@@ -10,178 +10,136 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Inter,Arial,sans-serif;
-}
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Inter,Arial,sans-serif;
+    }
 
-body{
-    background:#f5f7fb;
-    display:flex;
-    flex-direction:column;
-    height:100vh;
-}
+    body{
+        background:#f5f7fb;
+        display:flex;
+        flex-direction:column;
+        height:100vh;
+    }
 
-/* HEADER */
+    /* HEADER */
+    .toolbar{
+        background:white;
+        padding:16px 24px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom:1px solid #e5e7eb;
+        box-shadow:0 2px 10px rgba(0,0,0,.04);
+    }
 
-.toolbar{
+    .toolbar-left{
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+    }
 
-    background:white;
+    .btn{
+        text-decoration:none;
+        color:#111827;
+        background:white;
+        border:1px solid #d1d5db;
+        border-radius:12px;
+        padding:11px 18px;
+        font-weight:600;
+        transition:.25s;
+    }
 
-    padding:16px 24px;
+    .btn:hover{
+        background:#111827;
+        color:white;
+    }
 
-    display:flex;
+    .viewer{
+        flex:1;
+        padding:18px;
+    }
 
-    justify-content:space-between;
+    iframe{
+        width:100%;
+        height:100%;
+        border:none;
+        border-radius:14px;
+        background:white;
+        box-shadow:0 6px 25px rgba(0,0,0,.08);
+    }
 
-    align-items:center;
+    @media(max-width:768px){
+    .toolbar{
+        padding:15px;
+    }
 
-    border-bottom:1px solid #e5e7eb;
+    .toolbar-left{
+        width:100%;
+    }
 
-    box-shadow:0 2px 10px rgba(0,0,0,.04);
-}
-
-.toolbar-left{
-
-    display:flex;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-}
-
-.btn{
-
-    text-decoration:none;
-
-    color:#111827;
-
-    background:white;
-
-    border:1px solid #d1d5db;
-
-    border-radius:12px;
-
-    padding:11px 18px;
-
-    font-weight:600;
-
-    transition:.25s;
-}
-
-.btn:hover{
-
-    background:#111827;
-
-    color:white;
-}
-
-.viewer{
-
-    flex:1;
-
-    padding:18px;
-}
-
-iframe{
-
-    width:100%;
-
-    height:100%;
-
-    border:none;
-
-    border-radius:14px;
-
-    background:white;
-
-    box-shadow:0 6px 25px rgba(0,0,0,.08);
-}
-
-@media(max-width:768px){
-
-.toolbar{
-
-    padding:15px;
-
-}
-
-.toolbar-left{
-
-    width:100%;
-}
-
-.btn{
-
-    flex:1;
-
-    text-align:center;
-}
-
-}
+    .btn{
+        flex:1;
+        text-align:center;
+    }
+    }
 
 </style>
 
 </head>
-
 <body>
 
 <div class="toolbar">
+    <div class="toolbar-left">
+        <a href="index.html" class="btn">
+            <span class="icon">❮</span>
+            <span>Back</span>
+        </a>
+        <a id="downloadBtn" class="btn" download>
+            <span class="icon">⬇</span>
+            <span>Download PDF</span>
+        </a>
+        <a id="switchBtn" class="btn">
+            <span class="icon">🌐</span>
+            <span id="switchText">English Version</span>
+        </a>
 
-<div class="toolbar-left">
-
-<a href="index.html" class="btn">
-← Back
-</a>
-
-<a id="downloadBtn" class="btn" download>
-⬇ Download PDF
-</a>
-
-<a id="switchBtn" class="btn">
-Switch
-</a>
-
-</div>
-
+    </div>
 </div>
 
 <div class="viewer">
-
-<iframe id="viewer"></iframe>
-
+    <iframe id="viewer"></iframe>
 </div>
 
 <script>
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get("lang") || "id";
+    const pdf =
+    lang==="en"
+    ?
+    "assets/cv_eng.pdf"
+    :
+    "assets/cv_indo.pdf";
 
-const params = new URLSearchParams(window.location.search);
+    viewer.src=pdf;
+    downloadBtn.href=pdf;
 
-const lang = params.get("lang") || "id";
+    const switchBtn = document.getElementById("switchBtn");
+    const switchText = document.getElementById("switchText");
 
-const pdf =
-lang==="en"
-?
-"assets/cv_eng.pdf"
-:
-"assets/cv_indo.pdf";
+    if(lang==="id"){
 
-viewer.src=pdf;
+        switchBtn.href="cv.html?lang=en";
+        switchText.textContent="English Version";
 
-downloadBtn.href=pdf;
+    }else{
 
-if(lang==="id"){
+        switchBtn.href="cv.html?lang=id";
+        switchText.textContent="Versi Indonesia";
 
-switchBtn.href="cv.html?lang=en";
-switchBtn.innerHTML="🇬🇧 English Version";
-
-}else{
-
-switchBtn.href="cv.html?lang=id";
-switchBtn.innerHTML="🇮🇩 Versi Indonesia";
-
-}
+    }
 
 </script>
 

@@ -37,20 +37,54 @@ p{
 }
 
 .btn{
-    display:block;
-    padding:18px;
-    border-radius:14px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
     text-decoration:none;
+
     color:#111827;
-    background:white;
-    border:1px solid #dbe2ea;
-    transition:.25s;
+
+    background:#fff;
+
+    border:1px solid #d1d5db;
+
+    border-radius:14px;
+
+    padding:12px 22px;
+
     font-weight:600;
+
+    font-size:16px;
+
+    transition:.25s;
+
+    white-space:nowrap;
+
+    min-height:48px;
 }
 
 .btn:hover{
+
     background:#111827;
+
     color:white;
-    transform:translateY(-3px);
-    box-shadow:0 10px 24px rgba(0,0,0,.12);
+
+    transform:translateY(-2px);
+}
+
+.icon{
+
+    font-size:18px;
+
+    line-height:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 }
