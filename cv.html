@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CV Hafshah</title>
+    <title>Curriculum Vitae | Hafshah</title>
     <meta
         name="description"
         content="Curriculum Vitae of Hafshah">
 
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/darkmode.css">
 </head>
@@ -18,23 +26,44 @@
     <header class="toolbar">
         <div class="toolbar-left">
             <a href="index.html" class="btn">
-                <span class="icon">❮</span>
-                <span>Back</span>
+                <i data-lucide="arrow-left"></i>
+                <div class="btn-content">
+                    <span class="btn-title">
+                        Back
+                    </span>
+                    <span class="btn-subtitle">
+                        Home
+                    </span>
+                </div>
             </a>
             <a id="downloadBtn" class="btn" download>
-                <span class="icon">⬇</span>
-                <span>Download PDF</span>
+                <i data-lucide="download"></i>
+                <div class="btn-content">
+                    <span class="btn-title">
+                        Download
+                    </span>
+                    <span class="btn-subtitle">
+                        PDF File
+                    </span>
+                </div>
             </a>
             <a id="switchBtn" class="btn">
-                <span class="icon">🌐</span>
-                <span id="switchText">English Version</span>
+                <i data-lucide="languages"></i>
+                <div class="btn-content">
+                    <span class="btn-title">
+                        Language
+                    </span>
+                    <span
+                        id="switchText"
+                        class="btn-subtitle">
+                        English Version
+                    </span>
+                </div>
             </a>
         </div>
         <button
             id="theme-toggle"
-            class="theme-btn"
-            aria-label="Switch Theme"
-            title="Dark Mode">
+            class="theme-btn">
             🌙
         </button>
     </header>
@@ -78,5 +107,8 @@
             "Versi Indonesia";
     }
     </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="js/theme.js"></script>
 </body>
 </html>

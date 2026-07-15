@@ -1,71 +1,156 @@
-/* DARK MODE */
+/* DARK MODE VARIABLES */
 
 body.dark{
-    --bg:#0f172a;
-    --card:#1e293b;
+    --bg:#0b1120;
+    --card:rgba(15,23,42,.78);
     --text:#f8fafc;
-    --text2:#cbd5e1;
-    --border:#334155;
-    --primary:#3b82f6;
-    --btn-bg:#1e293b;
-    --btn-text:#f8fafc;
-    --btn-hover:#2563eb;
-    --btn-hover-text:#ffffff;
+    --text2:#94a3b8;
+    --border:rgba(148,163,184,.18);
+    --primary:#60a5fa;
+    --primary-hover:#3b82f6;
+    --shadow:
+        0 25px 70px rgba(0,0,0,.45);
 }
 
 /* BODY */
 body.dark{
-    background:var(--bg);
+    background:
+        radial-gradient(
+            circle at top,
+            #172554 0%,
+            #0f172a 40%,
+            #020617 100%
+        );
     color:var(--text);
 }
 
-/* TEXT */
+/* GLASS CARD */
+body.dark .container{
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+/* TYPOGRAPHY */
+body.dark h1{
+    color:var(--text);
+}
 body.dark p{
     color:var(--text2);
 }
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4{
-    color:var(--text);
+body.dark .footer{
+    color:var(--text2);
 }
 
-/* TOOLBAR */
-
-body.dark .toolbar{
-    background:var(--card);
-    border-bottom:1px solid var(--border);
-    box-shadow:0 4px 18px rgba(0,0,0,.35);
+/* DIVIDER */
+body.dark .divider{
+    background:linear-gradient(
+        90deg,
+        #3b82f6,
+        #8b5cf6
+    );
 }
 
 /* BUTTON */
 body.dark .btn{
-    background:var(--btn-bg);
-    color:var(--btn-text);
-    border-color:var(--border);
+    background:rgba(30,41,59,.85);
+    color:var(--text);
+    border:1px solid var(--border);
 }
 body.dark .btn:hover{
-    background:var(--btn-hover);
-    color:var(--btn-hover-text);
+    background:#1e3a8a;
+    border-color:#60a5fa;
+    box-shadow:
+        0 12px 30px rgba(59,130,246,.30);
+}
+
+/* ICON */
+body.dark .icon{
+    color:#93c5fd;
 }
 
 /* THEME BUTTON */
 body.dark .theme-btn{
-    background:var(--card);
-    color:#FFD54A;
-    border-color:var(--border);
+    background:rgba(30,41,59,.85);
+    color:#facc15;
+    border:1px solid var(--border);
 }
 body.dark .theme-btn:hover{
-    background:#2b3b55;
+    background:#334155;
+}
+
+/* TOOLBAR */
+body.dark .toolbar{
+    background:rgba(15,23,42,.92);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(18px);
 }
 
 /* PDF VIEWER */
 body.dark .viewer{
-    background:var(--bg);
+    background:transparent;
 }
 body.dark .viewer iframe{
-    background:var(--card);
-    box-shadow:0 10px 28px rgba(0,0,0,.45);
+    background:#111827;
+    border-radius:18px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+}
+
+/* SCROLLBAR */
+body.dark ::-webkit-scrollbar{
+    width:10px;
+}
+body.dark ::-webkit-scrollbar-track{
+    background:#020617;
+}
+body.dark ::-webkit-scrollbar-thumb{
+    background:#334155;
+    border-radius:999px;
+}
+body.dark ::-webkit-scrollbar-thumb:hover{
+    background:#475569;
+}
+
+/* TEXT SELECTION */
+body.dark ::selection{
+    background:#2563eb;
+    color:white;
+}
+
+/* GLOW EFFECT */
+body.dark .container::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    border-radius:inherit;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(96,165,250,.18),
+            rgba(139,92,246,.10)
+        );
+    z-index:-1;
+    filter:blur(25px);
+    opacity:.75;
+}
+
+/* SMOOTH TRANSITION */
+body,
+.container,
+.btn,
+.theme-btn,
+.toolbar,
+.viewer,
+.viewer iframe,
+.footer,
+.divider{
+    transition:
+        background-color .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        transform .25s ease;
 }
 
 /* CONTAINER */
@@ -76,46 +161,4 @@ body.dark .container{
 /* LINKS */
 body.dark a{
     color:inherit;
-}
-
-/* SCROLLBAR */
-body.dark ::-webkit-scrollbar{
-    width:10px;
-}
-body.dark ::-webkit-scrollbar-track{
-    background:#0f172a;
-}
-body.dark ::-webkit-scrollbar-thumb{
-    background:#475569;
-    border-radius:999px;
-}
-body.dark ::-webkit-scrollbar-thumb:hover{
-    background:#64748b;
-}
-
-/* SELECTION */
-body.dark ::selection{
-    background:#2563eb;
-    color:white;
-}
-
-/* SMOOTH TRANSITION */
-body,
-.container,
-.toolbar,
-.viewer,
-.viewer iframe,
-.btn,
-.theme-btn,
-p,
-h1,
-h2,
-h3,
-h4{
-    transition:
-        background-color .35s ease,
-        color .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease,
-        transform .25s ease;
 }
