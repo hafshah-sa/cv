@@ -1,40 +1,60 @@
+/* THEME MANAGER */
+const STORAGE_KEY = "theme";
 const button = document.getElementById("theme-toggle");
 
-function setTheme(theme) {
-    if (theme === "dark") {
-        document.body.classList.add("dark");
-    } else {
-        document.body.classList.remove("dark");
-    }
-
-    localStorage.setItem("theme", theme);
-
-    if (button) {
-        button.textContent = theme === "dark" ? "☀️" : "🌙";
+/* SET THEME */
+function setTheme(theme){
+    const isDark = theme === "dark";
+    document.body.classList.toggle("dark", isDark);
+    localStorage.setItem(STORAGE_KEY, theme);
+    if(button){
+        button.textContent = isDark ? "☀️" : "🌙";
         button.setAttribute(
             "aria-label",
-            theme === "dark"
+            isDark
                 ? "Switch to Light Mode"
                 : "Switch to Dark Mode"
+        );
+        button.setAttribute(
+            "title",
+            isDark
+                ? "Light Mode"
+                : "Dark Mode"
         );
     }
 }
 
-const savedTheme =
-    localStorage.getItem("theme") ||
-    (window.matchMedia("(prefers-color-scheme: dark)").matches
+/* GET INITIAL THEME */
+function getInitialTheme(){
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+    if(savedTheme){
+        return savedTheme;
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
-        : "light");
+        : "light";
+}
 
-setTheme(savedTheme);
+/* INITIALIZE */
+setTheme(getInitialTheme());
 
-if (button) {
-    button.addEventListener("click", () => {
+/* BUTTON EVENT */
+if(button){
+    button.addEventListener("click", ()=>{
         const nextTheme =
             document.body.classList.contains("dark")
                 ? "light"
                 : "dark";
-
         setTheme(nextTheme);
     });
 }
+
+/* SYSTEM THEME CHANGE (only when user has not selected manually) */
+const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+mediaQuery.addEventListener("change", (event)=>{
+    const userSelectedTheme = localStorage.getItem(STORAGE_KEY);
+    if(userSelectedTheme){
+        return;
+    }
+    setTheme(event.matches ? "dark" : "light");
+});
