@@ -1,21 +1,40 @@
 const button = document.getElementById("theme-toggle");
 
-const savedTheme = localStorage.getItem("theme");
+function setTheme(theme) {
+    if (theme === "dark") {
+        document.body.classList.add("dark");
+    } else {
+        document.body.classList.remove("dark");
+    }
 
-if(savedTheme==="dark"){
-    document.body.classList.add("dark");
-    button.textContent="☀️";
-}else{
-    button.textContent="🌙";
+    localStorage.setItem("theme", theme);
+
+    if (button) {
+        button.textContent = theme === "dark" ? "☀️" : "🌙";
+        button.setAttribute(
+            "aria-label",
+            theme === "dark"
+                ? "Switch to Light Mode"
+                : "Switch to Dark Mode"
+        );
+    }
 }
 
-button.addEventListener("click",()=>{
-    document.body.classList.toggle("dark");
-    if(document.body.classList.contains("dark")){
-        localStorage.setItem("theme","dark");
-        button.textContent="☀️";
-    }else{
-        localStorage.setItem("theme","light");
-        button.textContent="🌙";
-    }
-});
+const savedTheme =
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+
+setTheme(savedTheme);
+
+if (button) {
+    button.addEventListener("click", () => {
+        const nextTheme =
+            document.body.classList.contains("dark")
+                ? "light"
+                : "dark";
+
+        setTheme(nextTheme);
+    });
+}

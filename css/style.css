@@ -1,11 +1,16 @@
 :root{
     --bg:#ffffff;
     --card:#ffffff;
-    --text:#222;
-    --text2:#666;
-    --border:#e6e6e6;
+    --text:#222222;
+    --text2:#6b7280;
+    --border:#d1d5db;
 
     --primary:#2563eb;
+
+    --btn-bg:#ffffff;
+    --btn-text:#111827;
+    --btn-hover:#111827;
+    --btn-hover-text:#ffffff;
 }
 
 *{
@@ -15,6 +20,10 @@
     font-family:Inter, Arial, sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:var(--bg);
     display:flex;
@@ -22,6 +31,9 @@ body{
     align-items:center;
     min-height:100vh;
     color:var(--text);
+    transition:
+        background-color .3s ease,
+        color .3s ease;
 }
 
 .container{
@@ -36,7 +48,7 @@ h1{
 }
 
 p{
-    color:#6b7280;
+    color:var(--text2);
     margin-bottom:40px;
 }
 
@@ -53,9 +65,9 @@ p{
     justify-content:center;
     gap:10px;
     text-decoration:none;
-    color:#111827;
-    background:#fff;
-    border:1px solid #d1d5db;
+    background:var(--btn-bg);
+    color:var(--btn-text);
+    border:1px solid var(--border);
     border-radius:14px;
     padding:12px 22px;
     font-weight:600;
@@ -66,8 +78,8 @@ p{
 }
 
 .btn:hover{
-    background:#111827;
-    color:white;
+    background:var(--btn-hover);
+    color:var(--btn-hover-text);
     transform:translateY(-2px);
 }
 
@@ -90,6 +102,12 @@ p{
     color:var(--text);
     border:1px solid var(--border);
     transition:.3s;
+    cursor:pointer;
+    transition:
+        background-color .3s,
+        color .3s,
+        transform .3s,
+        border-color .3s;
 }
 
 .theme-btn:hover{
