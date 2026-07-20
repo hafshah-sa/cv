@@ -1,102 +1,135 @@
-## Design Philosophy
+<div align="center">
 
-This project is not just an online resume.
+# 💼 Personal CV Website
 
-It is intended to become a continuously maintained professional profile where I can:
-- update my work experience
-- add new technical skills
-- publish personal projects
-- keep my portfolio synchronized across all devices
-- provide recruiters with a simple and consistent experience
+A responsive, web-based curriculum vitae built with **HTML, CSS, and JavaScript**.
 
-Rather than creating multiple versions of my resume, I maintain a single source of truth that is always available online.
----
-# Personal CV Website
-
-A responsive, web-based curriculum vitae built with HTML, CSS, and JavaScript.
-
-🌐 Live Demo:
+🌐 **Live Demo**  
 https://hafshah-sa.github.io/cv/
+
+</div>
+
 ---
 
-## Overview
+## 📖 Overview
 
-Instead of using a traditional PDF resume only, I built this website so my CV can be accessed anytime from any device without requiring downloads or specific software.
-This project also serves as my personal portfolio hub where I can continuously maintain my career progress, update my skills, and showcase the projects I have developed.
-The website contains both Indonesian and English versions of my CV to support applications for local and international opportunities.
+This project is more than just an online resume.
+
+It serves as a personal website that allows me to maintain my professional profile, showcase my portfolio, and keep my career journey up to date in one place.
+
+Instead of relying solely on a PDF, this website enables recruiters and collaborators to access my CV instantly from any device without downloading additional files.
+
+The website currently provides:
+
+- 🇮🇩 Indonesian CV
+- 🌍 English CV
+- 💼 Portfolio links
+- 📄 Downloadable PDF version
+
 ---
 
-## Why I Built This
+## 🎯 Design Philosophy
 
-Traditional PDF resumes have several limitations:
-- Difficult to keep updated
-- Multiple versions stored across different devices
-- Recruiters often need to download the file first
-- Portfolio links are not always easy to access
+Rather than creating multiple versions of my resume, I maintain **one single source of truth** that is always available online.
+
+This project allows me to:
+
+- Update work experience anytime
+- Add new technical skills
+- Publish personal projects
+- Keep my portfolio synchronized across devices
+- Provide recruiters with a simple and consistent experience
+
+---
+
+## ❓ Why I Built This
+
+Traditional PDF resumes have several limitations.
+
+- Difficult to maintain
+- Multiple versions across devices
+- Usually require downloading
+- Portfolio links are less convenient
 
 This website solves those problems by providing:
-- Responsive design for desktop, tablet, and mobile
-- Instant access through a browser
-- Easy maintenance and future updates
-- Direct access to portfolio projects
-- Multilingual CV (Indonesian & English)
+
+- 📱 Responsive design
+- ⚡ Instant browser access
+- 🔄 Easy maintenance
+- 💼 Direct portfolio navigation
+- 🌍 Multilingual support (Indonesian & English)
+
 ---
 
-## Features
+## ✨ Features
 
 - Responsive HTML website
+- Dark / Light mode
 - Indonesian CV
 - English CV
-- PDF download
-- Dark / Light mode
-- PDF.js viewer
+- PDF Viewer
+- PDF Download
 - GitHub Pages deployment
-- Direct links to portfolio projects
+- Direct portfolio links
+
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- GitHub Pages
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Structure |
+| CSS3 | Styling |
+| JavaScript | Interactivity |
+| Mozilla PDF.js | PDF Rendering |
+| GitHub Pages | Deployment |
+
 ---
 
-## Portfolio
+## 📂 Portfolio
 
-This CV includes direct links to projects I have built
+This CV contains direct links to selected projects, including:
+
+- Python Applications
+- Web Development
+- Personal Projects
+- GitHub Repositories
+
 ---
 
-## Goals
+## 🚀 Goals
 
-This repository is designed to:
+The purpose of this repository is to:
+
 - Maintain a single, always up-to-date CV
-- Make my resume easily accessible from anywhere
-- Showcase my software engineering projects
-- Demonstrate my development skills
+- Make my resume accessible from anywhere
+- Showcase software development projects
+- Demonstrate frontend development skills
 - Continuously document my professional growth
+
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
 - Better animations
-- Search-friendly SEO
+- SEO optimization
 - Visitor analytics
 - Project timeline
 - Certifications section
 - Blog / Learning notes
 - Contact form
+
 ---
 
-## Author
+## 👤 Author
 
 **Hafshah**
 
-GitHub:
+**GitHub**  
 https://github.com/hafshah-sa
 
-Portfolio:
+**Portfolio**  
 https://hafshah-sa.github.io/cv/
 
-Email:
+**Email**  
 sa.hafshahh@gmail.com
